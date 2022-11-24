@@ -64,13 +64,13 @@ We prepared a demo API route handler
 [`pages/api/octopodes.js`](/pages/api/octopodes.js) and some demo data in the
 [`/_data`](/_data) folder. Additionally there is a mongoose model for the demo
 data in [`/pages/api/_db/models`](/pages/api/_db/models). This is just for
-demonstration purposes - create your own data and models following this scheme.
+demonstration purposes - create your own data and models following this pattern.
 
 ## Storybook
 
 We created a demo component
 [`/components/OctopusCard.js`](/components/OctopusCard.js) and corresponding
-stories. Create your own stories following this scheme.
+stories. Create your own stories following this pattern.
 
 ## ESLint
 
