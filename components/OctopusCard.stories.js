@@ -1,12 +1,11 @@
-import { OctopusCard } from "./OctopusCard";
-
+import {OctopusCard} from "./OctopusCard";
 const Story = {
   title: "Examples/OctopusCard",
   component: OctopusCard,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 };
 
-const Template = (args) => <OctopusCard {...args} />;
+const Template = args => <OctopusCard {...args} />;
 
 export const Octy = Template.bind({});
 Octy.args = {
