@@ -1,53 +1,99 @@
 # Capstone-Project-Template for Octopodes
 
 - Next.js project created with `create-next-app`
-- Default Styling (with CSS Modules) has been removed
-- Styled Components support added
-- Mongoose connectivity support added
-- Storybook support added
-- ESLint configuration added
-- React Testing Library & Jest support added
+- [Default Styling (with CSS Modules) has been removed](#styling)
+- [Styled Components support added](#styling)
+- [Mongoose connectivity support added](#mongoose-connectivity)
+- [Storybook support added](#storybook)
+- [ESLint config added](#eslint)
+- [React Testing Library & Jest support added](#testing)
+- [Prettier config added](#prettier)
 
 ## Getting Started
 
-To run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page
-auto-updates as you edit the file.
+Run Storybook:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello). This
-endpoint can be edited in `pages/api/hello.js`.
+```bash
+npm run storybook
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are
-treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead
-of React pages.
+Open [http://localhost:6006](http://localhost:6006) to inspect your components
+with Storybook.
 
-## Learn More
+Run tests:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run test
+# or
+npm run test:watch
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Styling
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js/) - your
-feedback and contributions are welcome!
+We removed the Next.js default styles and added Styled Components support.
 
-## Deploy on Vercel
+You can find an initial [`GobalStyles.js`](/styles/GlobalStyles.js) in the
+`/styles` directory. Storybook is already configured to respect styles from
+`GlobalStyles.js`
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+## Mongoose connectivity
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
-details.
+We added a mongoose connection helper function in
+[`/pages/api/_db/connect-db.js`](/pages/api/_db/connect-db.js).
+
+Please remember to wrap your API route handler functions with the `connectDB()`
+helper when exporting:
+
+```
+export default connectDB(handler);
+```
+
+To use your own DB, create a `.env.local` file and add your connection string as
+shown in [`.env.local.example`](/.env.local.example). Please remember to add
+your database name at the end of the connection string.
+
+We prepared a demo API route handler
+[`pages/api/octopodes.js`](/pages/api/octopodes.js) and some demo data in the
+[`/_data`](/_data) folder. Additionally there is a mongoose model for the demo
+data in [`/pages/api/_db/models`](/pages/api/_db/models). This is just for
+demonstration purposes - create your own data and models following this scheme.
+
+## Storybook
+
+We created a demo component
+[`/components/OctopusCard.js`](/components/OctopusCard.js) and corresponding
+stories. Create your own stories following this scheme.
+
+## ESLint
+
+You can run ESLint from the terminal by typing
+
+```bash
+npm run lint
+```
+
+Please make sure that there are no linter errors when you deploy to Vercel. The
+deployment will fail otherwise.
+
+## Testing
+
+Please write your tests in the [`/__tests__`](/__tests__/) folder instead of
+placing them next to your components. Next.js does not allow test files in its
+`/pages` directory.
+
+We prepared a demo test that tests if the Homepage renders a 🐙.
+
+## Prettier
+
+We added a [Prettier configuration file](/.prettierrc) with basic formatting
+rules. Feel free to edit these rules to your taste.
+
+You can auto format all files in the project by calling `npm run prettier`.
