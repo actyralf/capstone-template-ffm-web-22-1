@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - "**"
+      - '**'
 
 jobs:
   test:
@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
 
       - name: Get npm cache directory
         id: npm-cache-dir
@@ -37,3 +37,5 @@ jobs:
       - run: npm install
 
       - run: npm run lint
+
+      - run: npm run prettier
