@@ -1,4 +1,4 @@
-name: Code Quality
+name: Check Code Quality on Pull Request
 
 on:
   pull_request:
@@ -37,3 +37,5 @@ jobs:
       - run: npm install
 
       - run: npm run lint
+
+      - run: npm run prettier

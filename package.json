@@ -11,7 +11,8 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prettier": "prettier --ignore-path .gitignore --write ."
+    "prettier": "prettier --ignore-path .gitignore --check .",
+    "prettier:write": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
     "mongoose": "^6.7.3",
