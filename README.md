@@ -80,8 +80,8 @@ You can run ESLint from the terminal by typing
 npm run lint
 ```
 
-Please make sure that there are no linter errors when you deploy to Vercel. The
-deployment will fail otherwise.
+Please make sure that there are no linter errors before pushing to Github. Your
+pull requests will report failed code quality checks otherwise.
 
 ## Testing
 
@@ -91,9 +91,18 @@ placing them next to your components. Next.js does not allow test files in its
 
 We prepared a demo test that tests if the Homepage renders a 🐙.
 
+Please make sure that all tests pass before pushing to Github. Your pull
+requests will report failed test runs otherwise.
+
 ## Prettier
 
 We added a [Prettier configuration file](/.prettierrc) with basic formatting
 rules. Feel free to edit these rules to your taste.
 
-You can auto format all files in the project by calling `npm run prettier`.
+You can check the formatting of your files with `npm run prettier`
+
+You can auto format all files in the project by calling
+`npm run prettier:write`.
+
+Please make sure that your code passes the prettier check before pushing to
+Github. Your pull requests will report failed code quality checks otherwise.
