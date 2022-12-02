@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <StyledContainer>
-      <h1>Willkommen zum 🐙-Capstone-Template!</h1>
+      <h1>Herzlich willkommen zum 🐙-Capstone-Template!</h1>
     </StyledContainer>
   );
 }
