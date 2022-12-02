@@ -1,3 +1,17 @@
+import styled from "styled-components";
+
 export default function Home() {
-  return <h1>Willkommen zum 🐙-Capstone-Template!</h1>;
+  return (
+    <StyledContainer>
+      <h1>Willkommen zum 🐙-Capstone-Template!</h1>
+    </StyledContainer>
+  );
 }
+
+const StyledContainer = styled.section`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
